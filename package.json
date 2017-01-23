@@ -1,0 +1,38 @@
+{
+  "name": "waterfall",
+  "version": "1.0.0",
+  "description": "Wraps async-waterfall in a self-contained and useful way",
+  "main": "dist/waterfall.umd.js",
+  "jsnext:main": "dist/waterfall.es2015.js",
+  "module": "dist/waterfall.es2015.js",
+  "author": {
+    "name": "Cory Mawhorter",
+    "email": "cory.mawhorter@gmail.com",
+    "url": "http://www.mawhorter.net/"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "test": "mocha -r ./test/lib/helper test",
+    "retry": "npm run build && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cmawhorter/waterfall.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cmawhorter/waterfall/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "async-es": "^2.1.4",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "builtin-modules": "^1.1.1",
+    "expect": "^1.20.2",
+    "mocha": "^3.2.0",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0"
+  }
+}
