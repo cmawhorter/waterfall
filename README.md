@@ -4,7 +4,7 @@ I don't find async's waterfall very useful because of it's requirement to pass o
 
 async.waterfall uses eachOfSeries under-the-hood and so does this.  
 
-No external dependencies.  It depends on `async-es/eachOfSeries` but it's bundled.
+No external dependencies but it depends on (and bundles) `async-es/eachOfSeries` under the hood.
 
 ## Installing
 
