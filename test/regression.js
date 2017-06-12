@@ -1,6 +1,6 @@
 'use strict';
 
-var waterfall = require('../dist/waterfall.umd.js');
+var waterfall = require('../dist/steppin.umd.js');
 
 describe('regression tests', function() {
   it('https://github.com/cmawhorter/waterfall/issues/1', function() {

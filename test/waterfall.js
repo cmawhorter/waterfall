@@ -1,6 +1,6 @@
 'use strict';
 
-var waterfall = require('../dist/waterfall.umd.js');
+var waterfall = require('../dist/steppin.umd.js');
 
 describe('waterfall', function() {
   it('should take steps and return a result using an object literal', function(done) {

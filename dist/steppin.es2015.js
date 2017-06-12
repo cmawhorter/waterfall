@@ -994,4 +994,4 @@ var main = function (steps, optionalInitialState, callback) {
 };
 
 export default main;
-//# sourceMappingURL=waterfall.es2015.js.map
+//# sourceMappingURL=steppin.es2015.js.map

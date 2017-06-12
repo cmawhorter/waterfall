@@ -1,4 +1,5 @@
-# waterfall
+# steppin [![Build Status](https://travis-ci.org/cmawhorter/waterfall.svg?branch=master)](http://travis-ci.org/cmawhorter/waterfall)
+
 
 I don't find async's waterfall very useful because of it's requirement to pass on state to the next function.  That makes the signature of each step unique, difficult to refactor, and error-prone.
 
@@ -8,14 +9,14 @@ No external dependencies but it depends on (and bundles) `async-es/eachOfSeries`
 
 ## Installing
 
-`npm install cmawhorter/waterfall --save` or optionally `npm install cmawhorter/waterfall#x.x.x --save` to peg a version.
+`npm install steppin --save`
 
 ## How it works
 
-A task/step signature is constant and always `(state, next)`.  The signature of next is always `(err, result)` and the contents of result become associated with the key passed to waterfall.
+A task/step signature is constant and always `(state, next)`.  The signature of next is always `(err, result)` and the contents of result become associated with the key passed to steppin.
 
 ```js
-var waterfall = require('waterfall');
+var steppin = require('steppin');
 
 function calculate(color, size, callback) {
   // fake lookup
@@ -26,7 +27,7 @@ function calculate(color, size, callback) {
   }));
 }
 
-waterfall({
+steppin({
   color: (state, next) => next(null, 'red'),
   size: (state, next) => next(null, 'small'),
   price: (state, next) => calculate(state.color, state.size, next),
@@ -53,8 +54,8 @@ Output:
 ### Optional input
 
 ```js
-let initialState = { currency: 'usd' }; // Warning: value is not copied and waterfall will modify the contents of this object
-waterfall({}, initialState, callback)
+let initialState = { currency: 'usd' }; // Warning: value is not copied and steppin will modify the contents of this object
+steppin({}, initialState, callback)
 ```
 
 ### No constraints on state
@@ -80,7 +81,7 @@ var wrapInTimeout = (maxWait, step) => {
   };
 };
 
-waterfall({
+steppin({
   one: wrapInTimeout(1000, (state, next) => {
     thirdPartyServiceRequest(userId, next);
   }),
@@ -90,12 +91,12 @@ waterfall({
 
 ## Key ordering not guaranteed?
 
-In theory, the hash passed to waterfall does not have the execution order guaranteed.  However, in practice, I'm unaware of any engines or environments that would not execute in the order defined.
+In theory, the hash passed to steppin does not have the execution order guaranteed.  However, in practice, I'm unaware of any engines or environments that would not execute in the order defined.
 
 If you're still concerned, you can refactor the above example into this and it'll work:
 
 ```js
-waterfall([
+steppin([
   (state, next) => next(null, 'red'),
   (state, next) => next(null, 'small'),
   (state, next) => calculate(state.color, state.size, next),

@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
-	(global.waterfall = factory());
+	(global.steppin = factory());
 }(this, (function () { 'use strict';
 
 /**
@@ -1002,4 +1002,4 @@ var main = function (steps, optionalInitialState, callback) {
 return main;
 
 })));
-//# sourceMappingURL=waterfall.umd.js.map
+//# sourceMappingURL=steppin.umd.js.map

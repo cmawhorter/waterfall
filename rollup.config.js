@@ -24,7 +24,7 @@ export default {
     }),
   ],
   targets: [
-    { dest: 'dist/waterfall.umd.js', format: 'umd', moduleName: 'waterfall' },
-    { dest: 'dist/waterfall.es2015.js', format: 'es' },
+    { dest: 'dist/steppin.umd.js', format: 'umd', moduleName: 'steppin' },
+    { dest: 'dist/steppin.es2015.js', format: 'es' },
   ],
 }

@@ -1,10 +1,10 @@
 {
-  "name": "waterfall",
+  "name": "steppin",
   "version": "1.1.0",
   "description": "Wraps async-waterfall in a self-contained and useful way",
-  "main": "dist/waterfall.umd.js",
-  "jsnext:main": "dist/waterfall.es2015.js",
-  "module": "dist/waterfall.es2015.js",
+  "main": "dist/steppin.umd.js",
+  "jsnext:main": "dist/steppin.es2015.js",
+  "module": "dist/steppin.es2015.js",
   "author": {
     "name": "Cory Mawhorter",
     "email": "cory.mawhorter@gmail.com",
